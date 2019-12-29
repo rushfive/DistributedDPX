@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  distributeddpx.web:
+    image: ${DOCKER_REGISTRY-}distributeddpxweb
+    environment:
+      - ASPNETCORE_Kestrel__Certificates__Default__Password: 88bb630d-0168-42ec-84e8-768a799b0673
+      - ASPNETCORE_Kestrel__Certificates__Default__Path: \https\DistributedDPX.Web.pfx
+    build:
+      context: .
+      dockerfile: DistributedDPX.Web\Dockerfile
