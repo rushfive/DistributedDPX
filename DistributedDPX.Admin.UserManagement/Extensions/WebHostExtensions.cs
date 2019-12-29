@@ -11,8 +11,13 @@ namespace DistributedDPX.Admin.UserManagement.Extensions
 {
 	public static class WebHostExtensions
 	{
-		public static IWebHost MigrateDbContext<TContext>(this IWebHost host, Action<TContext, IServiceProvider> seeder) where TContext : DbContext
+		public static IWebHost MigrateDbContext<TContext>(this IWebHost host, Action<TContext, IServiceProvider> seeder = null) where TContext : DbContext
 		{
+			if (seeder == null)
+			{
+				return host;
+			}
+
 			using (var scope = host.Services.CreateScope())
 			{
 				var services = scope.ServiceProvider;

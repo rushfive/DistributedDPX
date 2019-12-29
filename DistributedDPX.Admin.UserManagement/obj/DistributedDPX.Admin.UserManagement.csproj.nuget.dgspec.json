@@ -66,6 +66,99 @@
         }
       }
     },
+    "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectName": "EventBusRabbitMQ",
+        "projectPath": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\ilee\\.nuget\\packages\\",
+        "outputPath": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ilee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\NugetPackageSources": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusCore\\EventBusCore.csproj": {
+                "projectPath": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusCore\\EventBusCore.csproj"
+              },
+              "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\UtilityExtensions.csproj": {
+                "projectPath": "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\UtilityExtensions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[4.9.4, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.0.0-rc1, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.6.0-preview1-26829-04, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\IntegrationEventLogEF\\IntegrationEventLogEF.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -109,6 +202,14 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
@@ -163,6 +264,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+                "projectPath": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
+              },
               "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\IntegrationEventLogEF\\IntegrationEventLogEF.csproj": {
                 "projectPath": "D:\\PlatformRepos\\DistributedDPX\\BuildingBlocks\\EventBus\\IntegrationEventLogEF\\IntegrationEventLogEF.csproj"
               }
@@ -178,11 +282,23 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.ApplicationInsights.AspNetCore": {
+              "target": "Package",
+              "version": "[2.12.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
@@ -241,6 +357,62 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\UtilityExtensions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\UtilityExtensions.csproj",
+        "projectName": "UtilityExtensions",
+        "projectPath": "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\UtilityExtensions.csproj",
+        "packagesPath": "C:\\Users\\ilee\\.nuget\\packages\\",
+        "outputPath": "D:\\PlatformRepos\\DistributedDPX\\Internals\\UtilityExtensions\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ilee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\NugetPackageSources": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

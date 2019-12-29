@@ -46,7 +46,7 @@ namespace DistributedDPX.Admin.UserManagement
                         .SeedAsync(context, env, settings, logger)
                         .Wait();
                 })
-                .MigrateDbContext<IntegrationEventLogContext>((_, __) => { });
+                .MigrateDbContext<IntegrationEventLogContext>();
 
                 Log.Information("Starting web host ({ApplicationContext})...", AppName);
                 host.Run();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DistributedDPX.BuildingBlocks.EventBus.EventBusCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,10 +10,12 @@ namespace DistributedDPX.Admin.UserManagement
 	{
 		public SerilogSettings Serilog { get; set; }
 		public InsightsSettings ApplicationInsights { get; set; }
-		public string EventBusConnection { get; set; }
-		public int EventBusRetryCount { get; set; }
+		public EventBusSettings EventBus { get; set; }
+		public string SubscriptionClientName { get; set; }
 		public int GRPC_PORT { get; set; }
 		public int PORT { get; set; }
+		public string SqlServerConnectionString { get; set; }
+		public string PathBase { get; set; }
 	}
 
 	public class SerilogSettings

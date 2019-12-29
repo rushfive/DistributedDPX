@@ -21,7 +21,6 @@ namespace DistributedDPX.Admin.UserManagement.Infrastructure
 
 			await policy.ExecuteAsync(async () =>
 			{
-				var useCustomizationData = settings.Value.UseCustomizationData;
 				var contentRootPath = env.ContentRootPath;
 				var picturePath = env.WebRootPath;
 
