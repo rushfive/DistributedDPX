@@ -1,0 +1,8 @@
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\bin\Debug\netcoreapp3.1\EventBusCore.deps.json
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\bin\Debug\netcoreapp3.1\EventBusCore.dll
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\obj\Debug\netcoreapp3.1\EventBusCore.csprojAssemblyReference.cache
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\obj\Debug\netcoreapp3.1\EventBusCore.AssemblyInfoInputs.cache
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\obj\Debug\netcoreapp3.1\EventBusCore.AssemblyInfo.cs
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\bin\Debug\netcoreapp3.1\EventBusCore.pdb
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\obj\Debug\netcoreapp3.1\EventBusCore.dll
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\EventBusCore\obj\Debug\netcoreapp3.1\EventBusCore.pdb

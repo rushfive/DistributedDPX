@@ -21,7 +21,7 @@ namespace DistributedDPX.Admin.UserManagement.Entities.Configurations
 				.IsRequired();
 
 			builder.Property(u => u.LastName)
-				.IsRequired();
+				.IsRequired(false);
 
 			builder.Property(u => u.MobilePhone)
 				.IsRequired(false);

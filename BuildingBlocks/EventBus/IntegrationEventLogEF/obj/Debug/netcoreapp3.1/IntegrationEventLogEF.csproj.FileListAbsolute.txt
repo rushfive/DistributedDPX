@@ -1,0 +1,11 @@
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\bin\Debug\netcoreapp3.1\IntegrationEventLogEF.deps.json
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\bin\Debug\netcoreapp3.1\IntegrationEventLogEF.dll
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.csprojAssemblyReference.cache
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.AssemblyInfoInputs.cache
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.AssemblyInfo.cs
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\bin\Debug\netcoreapp3.1\EventBusCore.dll
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\bin\Debug\netcoreapp3.1\IntegrationEventLogEF.pdb
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\bin\Debug\netcoreapp3.1\EventBusCore.pdb
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.csproj.CopyComplete
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.dll
+D:\PlatformRepos\DistributedDPX\BuildingBlocks\EventBus\IntegrationEventLogEF\obj\Debug\netcoreapp3.1\IntegrationEventLogEF.pdb
