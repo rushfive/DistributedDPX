@@ -1,13 +1,96 @@
+# extends base config (docker-compose.yml) for DEVELOPMENT env
+
 version: '3.4'
 
 services:
+
+  distributeddpx.infra.mongo:
+    ports:
+      - "27017:27017"
+    volumes:
+      - distributeddpx-mongo:/data/db
+
+  distributeddpx.infra.sqlserver:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5434:1433"
+    volumes:
+      - distributeddpx-sqlserver:/var/opt/mssql
+
+  distributeddpx.infra.redis:
+    ports:
+      - "6379:6379"
+    volumes:
+      - distributeddpx-redis:/data:rw
+
+  distributeddpx.infra.rabbitmq:
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
   distributeddpx.web:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=5101
+      #- ASPNETCORE_Kestrel__Certificates__Default__Password=88bb630d-0168-42ec-84e8-768a799b0673
+      #- ASPNETCORE_Kestrel__Certificates__Default__Path=/https/DistributedDPX.Web.pfx
     ports:
-      - "80"
-      - "443"
+      #- "80"
+      #- "443"
+      - "5100:80"
+      - "5101:443"
     volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
-      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      #- ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
+    #volumes:
+      #- ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      #- ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+
+  distributeddpx.admin.usermanagement:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - Serilog__SeqServerUrl=""
+      - Serilog__LogstashUrl=""
+      - ApplicationInsights__InstrumentationKey=""
+      - EventBus__Connection=distributeddpx_infra_rabbitmq
+      - EventBus__UserName=guest
+      - EventBus__Password=guest
+      - EventBus__RetryCount=5
+      - GRPC_PORT=81
+      - PORT=80
+      #- SqlServerConnectionString=Server=distributeddpx.infra.sqlserver;Database=DistributedDPX.Services.Admin.UserManagementDb;User Id=sa;Password=Pass@word
+      - SqlServerConnectionString=Server=distributeddpx_infra_sqlserver;Database=UserManagementDb;User Id=sa;Password=Pass@word
+      - PathBase=/admin-user-management
+    ports:
+      - "5200:5200"
+
+  distributeddpx.admin.participant:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - Serilog__SeqServerUrl=""
+      - Serilog__LogstashUrl=""
+      - ApplicationInsights__InstrumentationKey=""
+      - EventBus__Connection=distributeddpx_infra_rabbitmq
+      - EventBus__UserName=guest
+      - EventBus__Password=guest
+      - EventBus__RetryCount=5
+      - GRPC_PORT=81
+      - PORT=80
+      #- SqlServerConnectionString=Server=distributeddpx.infra.sqlserver;Database=DistributedDPX.Services.Admin.UserManagementDb;User Id=sa;Password=Pass@word
+      - MongoConnectionString=mongodb://distributeddpx_infra_mongo:27017/DistributedDpxMongo_1
+      - PathBase=/participant
+    ports:
+      - "5201:5201"
+
+volumes:
+  distributeddpx-mongo:
+    external: false
+  distributeddpx-sqlserver:
+    external: false
+  distributeddpx-redis:
+    external: false

@@ -1,11 +1,48 @@
+# base config (settings found here should be the same regardless of env)
+
 version: '3.4'
 
 services:
+
+  distributeddpx.infra.mongo:
+    image: mongo:4.0.13
+    container_name: distributeddpx_infra_mongo
+
+  distributeddpx.infra.sqlserver:
+    image: microsoft/mssql-server-linux:2017-latest
+    container_name: distributeddpx_infra_sqlserver
+
+  distributeddpx.infra.redis:
+    image: redis:alpine
+    container_name: distributeddpx_infra_redis
+    #image: amd64/redis:4.0-alpine
+    #image: redis:4.0-alpine
+
+  distributeddpx.infra.rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: distributeddpx_infra_rabbitmq
+
   distributeddpx.web:
-    image: ${DOCKER_REGISTRY-}distributeddpxweb
-    environment:
-      - ASPNETCORE_Kestrel__Certificates__Default__Password: 88bb630d-0168-42ec-84e8-768a799b0673
-      - ASPNETCORE_Kestrel__Certificates__Default__Path: \https\DistributedDPX.Web.pfx
+    image: ${REGISTRY:-distributeddpx}/distributeddpx_web:${PLATFORM:-linux}-${TAG:-latest}
+    #image: ${DOCKER_REGISTRY-}distributeddpx_web
     build:
       context: .
-      dockerfile: DistributedDPX.Web\Dockerfile
+      dockerfile: WebApps/DistributedDPX.Web/Dockerfile
+    depends_on:
+      - distributeddpx.admin.usermanagement
+
+  distributeddpx.admin.usermanagement:
+    image: ${DOCKER_REGISTRY-}distributeddpx_admin_usermanagement
+    build:
+      context: .
+      dockerfile: Services/UserManagement/UserManagement.API/Dockerfile
+    depends_on:
+      - distributeddpx.infra.sqlserver
+
+  distributeddpx.admin.participant:
+    image: ${DOCKER_REGISTRY-}distributeddpx_admin_participant
+    build:
+      context: .
+      dockerfile: Services/Participant/Participant.Api/Dockerfile
+    depends_on:
+      - distributeddpx.infra.mongo
